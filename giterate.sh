@@ -33,7 +33,7 @@ while IFS= read -r line; do
     chunk_i=$((i / chunk_size))
     temp=${chunks[$chunk_i]}
     temp+=$line
-    temp+=$'\n'
+    temp+=$'\n\r'
     chunks[$chunk_i]=$temp
 
     i=$((i+1))
