@@ -17,7 +17,7 @@ else
 fi
 
 # divide dest into 5 line chunks, store in array e.g. [0..,5..,10..,15..,21] 
-lines=`wc -l < $FILE`
+lines=`wc -l < "$FILE"`
 chunk_size=$((lines / 4))
 
 echo $lines
@@ -31,21 +31,24 @@ done
 i=0
 while IFS= read -r line; do
     chunk_i=$((i / chunk_size))
-
-    temp=chunks[$chunk_i]
+    temp=${chunks[$chunk_i]}
     temp+=$line
+    temp+=$'\n'
     chunks[$chunk_i]=$temp
 
     i=$((i+1))
-done < $FILE
+done < "$FILE"
 
 # loop 5 times: write from chars [i] to [i+1] & commit
 filename="$(basename -- "$FILE")"
 
 for chunk_i in {0..4}
 do
-    $chunks[$chunk_i] >> "$DEST/$filename"
-    sleep 5
+    chunk=${chunks[$chunk_i]}
+    echo $chunk >> "$DEST/$filename"
+    echo "Wrote chunk $chunk_i"
+    sleep 0.1
 done
 
-read
+
+echo "Done."
