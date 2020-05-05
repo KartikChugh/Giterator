@@ -20,8 +20,8 @@ fi
 lines=`wc -l < "$FILE"`
 chunk_size=$((lines / 4))
 
-echo $lines
-echo $chunk_size
+echo "Linecount: $lines"
+echo "Chunk size: $chunk_size lines"
 
 for chunk_i in {0..4}
 do
@@ -41,14 +41,17 @@ done < "$FILE"
 
 # loop 5 times: write from chars [i] to [i+1] & commit
 filename="$(basename -- "$FILE")"
+period=$((HRS * 60 * 60 / 5))
 
 for chunk_i in {0..4}
 do
+    sleep $period
     chunk=${chunks[$chunk_i]}
     echo $chunk >> "$DEST/$filename"
     echo "Wrote chunk $chunk_i"
-    sleep 0.1
-done
 
+    git add .
+    git commit -m "commit $((chunk_i + 1))"
+done
 
 echo "Done."
