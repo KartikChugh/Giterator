@@ -6,17 +6,21 @@ DEST=$2
 HRS=$3
 CHUNKS=${4:-5}
 
-if [ ! -d "$DEST" ]
-then
-    echo "giterator >> Destination $DEST doesn't exist"
-    exit 1
+if [ ! -d "$DEST" ]; then
+    echo "giterator >> Destination $DEST doesn't exist. Create? [Y = Yes]"
+    read input
+    input=$(echo "$input" | awk '{print tolower($0)}')
+    if [ $input == "y" ]; then
+        mkdir "$DEST"
+    else
+        exit 0
+    fi
 fi
 
 cd "$DEST"
 
 # Make repo at destination if non-existent
-if [ -d ".git/" ]
-then
+if [ -d ".git/" ]; then
     echo "giterator >> Repo exists at directory"
 else
     echo "giterator >> Repo does not exist"
