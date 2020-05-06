@@ -4,7 +4,7 @@
 FILE=$1
 DEST=$2
 HRS=$3
-CHUNKS=$4
+CHUNKS=${4:-5}
 
 if [ ! -d "$DEST" ]
 then
@@ -25,9 +25,9 @@ fi
 
 # Store lines of source file into array
 linecount=`wc -l < "$FILE"`
-chunk_size=$((linecount / 4))
+chunk_size=$(( linecount / ($CHUNKS-1) ))
 filename="$(basename -- "$FILE")"
-period=$((HRS * 60 * 60 / 5)) # in seconds
+period=$((HRS * 60 * 60 / $CHUNKS)) # in seconds
 
 echo "giterator >> File name: $filename"
 echo "giterator >> File size: $linecount lines"
@@ -37,7 +37,7 @@ echo "giterator >> Chunk period: $period seconds"
 mapfile -t lines < "$FILE"
 
 # Write to destination file periodically
-for chunk_i in {0..4}
+for (( chunk_i=0; chunk_i<$CHUNKS; chunk_i++ ))
 do
     line_start=$((chunk_i * chunk_size))
     line_end=$((line_start + chunk_size-1))
