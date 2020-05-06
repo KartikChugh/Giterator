@@ -31,3 +31,4 @@ Just `git` and a Bash shell.
 - Automate pushing to upstream
 - Select entire source folders
 - Lessen commit time regularity
+~~- Create destination folder~~
