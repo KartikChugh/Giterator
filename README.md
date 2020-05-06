@@ -1,8 +1,8 @@
 # giterator: automated repo assembly
 ![giterator logo](https://raw.githubusercontent.com/KartikChugh/giterator/master/logo.jpg)
 
-## Assemble repositories from the command line
-Giterator is a utility designed to duplicate the content of existing files incrementally, leaving a chain of evenly spaced commits over time. Just give it files to recreate, a destination folder, and a time horizon, and then let it run in the background!
+## Re-assemble repositories from the command line
+Giterator is a utility designed to duplicate the content of existing files incrementally, leaving a chain of commits spaced out over time. Just give it files to recreate, a destination folder, and a time horizon, and then let it run in the background!
 
 The program works by dividing source files into discrete "chunks" that are to be written to disk periodically. The chunks are cached, so the source file can be deleted upon execution of giterator.
 
@@ -28,3 +28,4 @@ Just `git` and a Bash shell.
 - Parameterize number of commits
 - Automate pushing to upstream
 - Select entire source folders
+- Lessen commit time regularity
