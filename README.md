@@ -23,7 +23,10 @@ This would create a new `regression.ipynb` file under the `/StatisticsRepo/` dir
 Just `git` and a Bash shell.
 
 ## To-Do
-- Fix inconsistent newline behavior
+### Bugfixes
+- Fix inconsistent newline behavior [#1](https://github.com/KartikChugh/giterator/issues/1)
+- Fix working directory switch [#2](https://github.com/KartikChugh/giterator/issues/2)
+### Features
 - Cache lines independently
 - Parameterize number of commits
 - Automate pushing to upstream
