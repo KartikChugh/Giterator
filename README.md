@@ -27,7 +27,7 @@ Just `git` and a Bash shell.
 - ~~Fix inconsistent newline behavior [(#1)](https://github.com/KartikChugh/giterator/issues/1)~~
 - Fix working directory switch [(#2)](https://github.com/KartikChugh/giterator/issues/2)
 ### Features
-- Parameterize number of commits
+- ~~Parameterize number of commits~~
 - Automate pushing to upstream
 - Select entire source folders
 - Lessen commit time regularity
