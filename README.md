@@ -24,8 +24,8 @@ Just `git` and a Bash shell.
 
 ## To-Do
 ### Bugfixes
-- Fix inconsistent newline behavior [#1](https://github.com/KartikChugh/giterator/issues/1)
-- Fix working directory switch [#2](https://github.com/KartikChugh/giterator/issues/2)
+- Fix inconsistent newline behavior [(#1)](https://github.com/KartikChugh/giterator/issues/1)
+- Fix working directory switch [(#2)](https://github.com/KartikChugh/giterator/issues/2)
 ### Features
 - Cache lines independently
 - Parameterize number of commits
