@@ -17,15 +17,18 @@ if [ ! -d "$DEST" ]; then
     fi
 fi
 
+# Make repo at destination if non-existent
+wd=$(PWD)
 cd "$DEST"
 
-# Make repo at destination if non-existent
 if [ -d ".git/" ]; then
     echo "giterator >> Repo exists at directory"
 else
     echo "giterator >> Repo does not exist"
     git init
 fi
+
+cd "$wd"
 
 # Store lines of source file into array
 linecount=`wc -l < "$FILE"`
@@ -56,7 +59,7 @@ do
     for (( line_j=$line_start; line_j<=$line_end; line_j++ ))
     do
         line=${lines[line_j]}
-        echo $line >> "$filename"
+        echo $line >> "$DEST/$filename"
     done
 
     echo "giterator >> Wrote chunk $chunk_i"
@@ -65,5 +68,5 @@ do
     git commit -m "commit $((chunk_i + 1))"
 done
 
-truncate -s -1 "$filename" # Removes ending newline
+truncate -s -1 "$DEST/$filename" # Removes ending newline
 echo "Done."
