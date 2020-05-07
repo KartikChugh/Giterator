@@ -32,7 +32,7 @@ cd "$wd"
 
 # Store lines of source file into array
 linecount=`wc -l < "$FILE"`
-chunk_size=$(( linecount / ($CHUNKS-1) ))
+chunk_size=$(( linecount / $CHUNKS + 1 ))
 filename="$(basename -- "$FILE")"
 period=$((HRS * 60 * 60 / $CHUNKS)) # in seconds
 
