@@ -3,7 +3,7 @@
 # Parameters
 FILE=$1
 DEST=$2
-HRS=${3:0}
+HRS=${3:-0}
 CHUNKS=${4:-5}
 
 fluct=$(( HRS*60*60 / 20 / $CHUNKS )) # seconds
