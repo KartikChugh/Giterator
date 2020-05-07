@@ -3,7 +3,7 @@
 # Parameters
 FILE=$1
 DEST=$2
-HRS=$3
+HRS=${3:0}
 CHUNKS=${4:-5}
 
 if [ ! -d "$DEST" ]; then
@@ -36,6 +36,7 @@ chunk_size=$(( linecount / ($CHUNKS-1) ))
 filename="$(basename -- "$FILE")"
 period=$((HRS * 60 * 60 / $CHUNKS)) # in seconds
 
+echo
 echo "giterator >> File name: $filename"
 echo "giterator >> File size: $linecount lines"
 echo "giterator >> Chunk size: $chunk_size lines"
@@ -53,6 +54,7 @@ do
     then line_end=$linecount
     fi
 
+    echo
     echo "giterator >> Working on chunk $chunk_i ($line_start to $line_end)"
     sleep $period
 
@@ -70,4 +72,4 @@ do
 done
 
 truncate -s -1 "$DEST/$filename" # Removes ending newline
-echo "Done."
+echo "giterator >> Done."
