@@ -24,14 +24,14 @@ Just `git` and a Bash shell.
 
 ## To-Do
 ### Bugfixes
-- ~~Fix newline behavior [(#1](https://github.com/KartikChugh/giterator/issues/1), [#7](https://github.com/KartikChugh/giterator/issues/7)~~
-- ~~Fix working directory [(#2](https://github.com/KartikChugh/giterator/issues/2), [#5](https://github.com/KartikChugh/giterator/issues/5))~~
-- ~~Restore whitespace writing [(#4)](https://github.com/KartikChugh/giterator/issues/4)~~
-- ~~Ensure full file writing [((#6)](https://github.com/KartikChugh/giterator/issues/6)~~
+- ~~Fix newline behavior~~ [(#1](https://github.com/KartikChugh/giterator/issues/1), [#7](https://github.com/KartikChugh/giterator/issues/7))
+- ~~Fix working directory~~ [(#2](https://github.com/KartikChugh/giterator/issues/2), [#5](https://github.com/KartikChugh/giterator/issues/5))
+- ~~Restore whitespace writing~~ [(#4)](https://github.com/KartikChugh/giterator/issues/4)
+- ~~Ensure full file writing~~ [((#6)](https://github.com/KartikChugh/giterator/issues/6)
 
 ### Features
 - ~~Parameterize number of commits~~
 - Automate pushing to upstream
 - Select entire source folders
-~~- Lessen commit time regularity~~
+- ~~Lessen commit time regularity~~
 - ~~Create destination folder~~
