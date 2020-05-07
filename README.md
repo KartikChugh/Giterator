@@ -14,10 +14,12 @@ Usage is as follows:
 ```
 An example is provided below:
 ```bash
-./giterate.sh "C:/Users/User/regression.ipynb" "C:/Users/User/StatisticsRepo/" 6
+./giterate.sh "C:/Users/User/notebook.ipynb" "C:/Users/User/StatisticsRepo/" 5
 ```
 
-This would create a new `regression.ipynb` file under the `/StatisticsRepo/` directory in a span of six hours, with regular commits in between. To work on multiple files at once, run the script concurrently in another shell.
+This would create a new `notebook.ipynb` file under the `/StatisticsRepo/` directory in a span of five hours, with regular commits in between. To work on multiple files at once, run the script concurrently in another shell.
+
+![giterator logo](https://raw.githubusercontent.com/KartikChugh/giterator/master/img/example.PNG)
 
 ## Dependencies
 Just `git` and a Bash shell.
