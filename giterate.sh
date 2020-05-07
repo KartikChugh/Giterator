@@ -59,7 +59,7 @@ do
     for (( line_j=$line_start; line_j<=$line_end; line_j++ ))
     do
         line=${lines[line_j]}
-        echo $line >> "$DEST/$filename"
+        echo "$line" >> "$DEST/$filename"
     done
 
     echo "giterator >> Wrote chunk $chunk_i"
