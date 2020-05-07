@@ -72,4 +72,9 @@ do
 done
 
 truncate -s -1 "$DEST/$filename" # Removes ending newline
+cd "$DEST"
+git add .
+git commit -m "Update $filename"
+cd "$wd"
+
 echo "giterator >> Done."
