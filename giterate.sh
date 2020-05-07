@@ -6,6 +6,8 @@ DEST=$2
 HRS=${3:0}
 CHUNKS=${4:-5}
 
+fluct=$(( HRS*60*60 / 20 / $CHUNKS )) # seconds
+
 if [ ! -d "$DEST" ]; then
     echo "giterator >> Destination $DEST doesn't exist. Create? [Y = Yes]"
     read input
@@ -56,7 +58,11 @@ do
 
     echo
     echo "giterator >> Working on chunk $chunk_i ($line_start to $line_end)"
-    sleep $period
+
+    # Sleep period +/- fluct
+    rng=$((`shuf -i 0-$fluct -n 1` * 2 - $fluct))
+    period_i=$(( period +  $rng))
+    sleep $period_i
 
     for (( line_j=$line_start; line_j<=$line_end; line_j++ ))
     do
@@ -65,10 +71,17 @@ do
     done
 
     echo "giterator >> Wrote chunk $chunk_i"
-    cd "$DEST"
-    git add .
-    git commit -m "commit $((chunk_i + 1))"
-    cd "$wd"
+    
+    # Skip one in five commits
+    r=$(( $RANDOM % 5 ))
+    if (( $line_end == $linecount )) || (( $r > 0 )); then
+        echo 
+        cd "$DEST"
+        git add .
+        git commit -m "Update $filename"
+        cd "$wd"
+    else echo "giterator >> Skipping commit";
+    fi
 done
 
 truncate -s -1 "$DEST/$filename" # Removes ending newline
