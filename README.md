@@ -1,5 +1,5 @@
 # giterator: automated repo reassembly
-![giterator logo](https://raw.githubusercontent.com/KartikChugh/giterator/master/logo.jpg)
+![giterator logo](https://raw.githubusercontent.com/KartikChugh/giterator/master/img/logo.jpg)
 
 ## Reassemble repositories from the command line
 Giterator is a utility designed to duplicate the content of existing files incrementally, leaving a chain of commits spaced out over time. Just give it files to recreate, a destination folder, and a time horizon, and then let it run in the background!
