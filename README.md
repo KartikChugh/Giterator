@@ -25,7 +25,9 @@ Just `git` and a Bash shell.
 ## To-Do
 ### Bugfixes
 - ~~Fix inconsistent newline behavior [(#1)](https://github.com/KartikChugh/giterator/issues/1)~~
-- Fix working directory switch [(#2)](https://github.com/KartikChugh/giterator/issues/2)
+- ~~Fix working directory switch [(#2](https://github.com/KartikChugh/giterator/issues/2), [#5](https://github.com/KartikChugh/giterator/issues/5))~~
+- ~~Restore whitespace writing [(#4)](https://github.com/KartikChugh/giterator/issues/4)~~
+
 ### Features
 - ~~Parameterize number of commits~~
 - Automate pushing to upstream
