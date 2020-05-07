@@ -63,9 +63,10 @@ do
     done
 
     echo "giterator >> Wrote chunk $chunk_i"
-
+    cd "$DEST"
     git add .
     git commit -m "commit $((chunk_i + 1))"
+    cd "$wd"
 done
 
 truncate -s -1 "$DEST/$filename" # Removes ending newline
