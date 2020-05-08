@@ -28,10 +28,10 @@ With recent updates, giterator now allows you to specify the number of chunks, o
 ./giterate.sh "C:/Users/User/notebook.ipynb" "C:/Users/User/StatisticsRepo/" 5 8 
 ```
 
-writes eight commits in five hours, or roughly one commit (with 1/8 of the work done) every 40 minutes. Use the time and chunk settings to tailor the workflow to your liking (default chunk count is 5).
+writes eight commits in five hours, or roughly one commit (doing an eighth of the total work) every 40 minutes. Use the time and chunk settings to tailor the workflow to your liking. Read more at the [official documentation page](https://github.com/KartikChugh/giterator/wiki#giteratesh).
 
 ### <sup>†</sup>Variation
-
+Giterator now supports random variance in commit times and chunk sizes to create a more realistic commit history. This feature is enabled by default.
 
 ## Dependencies
 Just `git` and a Bash shell.
