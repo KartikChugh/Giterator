@@ -1,8 +1,8 @@
-# giterator: automated repo formation
+# giterator: automated commit scheduler
 ![giterator logo](https://raw.githubusercontent.com/KartikChugh/giterator/master/img/logo.jpg)
 
-## Autocommit repositories from the command line
-Giterator is a utility designed to clone the content of existing files incrementally, leaving a chain of commits spaced out over time. Just give it files to recreate, a destination folder, and a time horizon, and then let it work in the background!
+## Schedule commits from the command line
+Giterator is a tool designed to clone the content of existing files incrementally, leaving a chain of commits spaced out over time. Just give it files to recreate, a destination folder, and a time horizon, and then let it work in the background!
 
 The program works by dividing source files into discrete "chunks" that are to be written to disk periodically. The chunks are cached, so the source file can be deleted upon execution if desired.
 
